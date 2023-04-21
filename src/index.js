@@ -37,12 +37,6 @@ function foundCountry(data) {
   }
 }
 
-function err() {
-  countryList.innerHTML = '';
-  countryInfo.innerHTML = '';
-  Notiflix.Notify.failure('Oops, there is no country with that name.');
-}
-
 function createMarkupInfo(arr) {
   return arr
     .map(
@@ -73,3 +67,9 @@ function createMarkupList(arr) {
     )
     .join('');
 }
+
+function err() {
+    countryList.innerHTML = '';
+    countryInfo.innerHTML = '';
+    Notiflix.Notify.failure('Oops, there is no country with that name.');
+  }
