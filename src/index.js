@@ -68,8 +68,14 @@ function createMarkupList(arr) {
     .join('');
 }
 
-function err() {
+function err(error) {
+  if(error.message === "Not Found"){
+    Notiflix.Notify.failure('Oops, there is no country with that name.');
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
-    Notiflix.Notify.failure('Oops, there is no country with that name.');
+  } else {
+    Notiflix.Notify.failure(`${error.message}`);
+    countryList.innerHTML = '';
+    countryInfo.innerHTML = '';
+  };
   }
